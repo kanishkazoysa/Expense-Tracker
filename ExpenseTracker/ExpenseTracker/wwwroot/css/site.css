@@ -45,3 +45,8 @@ body {
     border: 1px solid #fff;
 }
 
+/*widget*/
+.widget {
+    border-radius: 1rem;
+    background-color: #212b36;
+}
