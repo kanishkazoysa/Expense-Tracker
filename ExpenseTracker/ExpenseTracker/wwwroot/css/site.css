@@ -23,6 +23,18 @@ body {
   color:#fff;
 }
 
+/*Button*/
+.btn:focus, btn:active {
+    outline: none !important;
+    box-shadow:none;
+}
+
+/*HyperLink*/
+.no-a-decoration, .no-a-decoration:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 /*Grid*/
 .e-grid {
     border: 0;
