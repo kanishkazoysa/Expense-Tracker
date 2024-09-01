@@ -71,7 +71,7 @@ namespace ExpenseTracker.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Transaction");
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("ExpenseTracker.Models.Transaction", b =>
