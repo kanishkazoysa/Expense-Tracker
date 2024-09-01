@@ -46,11 +46,11 @@ namespace ExpenseTracker.Controllers
         }
 
 
-        // GET: Transaction/Create
+        // GET: Transaction/AddOrEdit
         public IActionResult AddOrEdit()
         {
             ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryId");
-            return View();
+            return View(new Transaction());
         }
 
 
