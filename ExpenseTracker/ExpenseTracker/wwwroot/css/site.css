@@ -25,10 +25,10 @@ body {
     overflow: hidden;
 }
 
-.e-bigger {
+/*.e-bigger {
     font-size: x-large;
 }
-
+*/
 .main-content {
     margin-left: 290px;
     overflow-y: auto;
