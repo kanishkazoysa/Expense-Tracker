@@ -57,8 +57,6 @@ namespace ExpenseTracker.Controllers
                 .OrderByDescending(l => l.amount)
                 .ToList();
 
-            //Spline Chart -Income vs Expense
-
             // Income
             List<SplineChartData> IncomeSummary = SelectedTransactions
                 .Where(i => i.Category.Type == "Income")
@@ -108,7 +106,6 @@ namespace ExpenseTracker.Controllers
             return View();
         }
     }
-
     public class SplineChartData
     {
         public string day;
