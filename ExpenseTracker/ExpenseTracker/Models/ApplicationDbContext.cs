@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ExpenseTracker.Models;
+﻿using ExpenseTracker.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExpenseTracker.Models
 {
@@ -8,7 +8,7 @@ namespace ExpenseTracker.Models
         public ApplicationDbContext(DbContextOptions options): base(options)
         { }
 
-        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Transaction> Transaction { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ExpenseTracker.Models.Category> Category { get; set; } = default!;
 

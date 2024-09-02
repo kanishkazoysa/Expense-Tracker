@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ExpenseTracker.Models;
 
-namespace Expense_Tracker.Controllers
+namespace ExpenseTracker.Controllers
 {
     public class TransactionController : Controller
     {
@@ -21,7 +21,7 @@ namespace Expense_Tracker.Controllers
         // GET: Transaction
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Transactions.Include(t => t.Category);
+            var applicationDbContext = _context.Transaction.Include(t => t.Category);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -32,7 +32,7 @@ namespace Expense_Tracker.Controllers
             if (id == 0)
                 return View(new Transaction());
             else
-                return View(_context.Transactions.Find(id));
+                return View(_context.Transaction.Find(id));
         }
 
         // POST: Transaction/AddOrEdit
@@ -60,14 +60,14 @@ namespace Expense_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Transactions == null)
+            if (_context.Transaction == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Transactions'  is null.");
             }
-            var transaction = await _context.Transactions.FindAsync(id);
+            var transaction = await _context.Transaction.FindAsync(id);
             if (transaction != null)
             {
-                _context.Transactions.Remove(transaction);
+                _context.Transaction.Remove(transaction);
             }
 
             await _context.SaveChangesAsync();
